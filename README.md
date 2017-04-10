@@ -74,6 +74,7 @@ or as a parameter to docker,
 $ docker run --name myjenkins -p 8080:8080 -p 50001:50001 --env JENKINS_SLAVE_AGENT_PORT=50001 ppavlov/jenkins-master
 
 # Installing more tools
+
 You can run your container as root - and install via apt-get, install as part of build steps via jenkins tool installers, or you can create your own Dockerfile to customise, for example:
 
 FROM ppavlov/jenkins-master
