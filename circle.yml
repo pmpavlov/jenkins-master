@@ -3,8 +3,8 @@ machine:
     - docker
 
 dependencies:
-  pre:
-    - pip install awscli
+#  pre:
+#    - pip install awscli
   override:
     - docker info
     - docker build --rm=false -t ppavlov/jenkins-master .
