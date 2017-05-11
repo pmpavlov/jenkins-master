@@ -3,11 +3,8 @@ machine:
     - docker
 
 dependencies:
-  cache_directories:
-    - "~/docker"
   override:
     - docker info
-    - mkdir -p ~/docker
     - docker build --rm=false -t ppavlov/jenkins-master .
    
 test:
