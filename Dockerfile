@@ -1,6 +1,6 @@
 FROM jenkins:alpine
 
-MAINTAINER P Pavlov <ppavlov@dontmail.me>
+MAINTAINER Pavlov <ppavlov@dontmail.me>
 
 COPY executors.groovy /usr/share/jenkins/ref/init.groovy.d/executors.groovy
 
