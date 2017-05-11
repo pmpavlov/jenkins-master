@@ -3,14 +3,17 @@ machine:
     - docker
 
 dependencies:
+  cache_directories:
+    - "~/docker"
   override:
     - docker info
-    - docker build --rm=false -t ppavlov/jenkins-master .
-
+    - mkdir -p ~/docker
+#    - docker build --rm=false -t ppavlov/jenkins-master .
+   
 test:
   override:
     - docker run -p 8080:8080 -p 50000:50000 ppavlov/jenkins-master
-#    - curl --retry 10 --retry-delay 5 -v http//localhost:8080/admin
+#    - curl --retry 10 --retry-delay 5 -v http//localhost:8080/
 
 deployment:
   hub:
