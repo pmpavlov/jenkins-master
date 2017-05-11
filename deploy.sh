@@ -4,7 +4,7 @@
 SHA1=$1
 
 # Deploy image to Docker Hub
-docker push circleci/hello:$SHA1
+docker push ppavlov/jenkins-master:$SHA1
 
 # Create new Elastic Beanstalk version
 EB_BUCKET=hello-bucket
