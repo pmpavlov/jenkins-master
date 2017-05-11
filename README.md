@@ -1,5 +1,7 @@
 # Build Status [![Codefresh build status]( https://g.codefresh.io/api/badges/build?repoOwner=pmpavlov&repoName=jenkins-master&branch=master&pipelineName=jenkins-master&accountName=ppavlov&type=cf-1)]( https://g.codefresh.io/repositories/pmpavlov/jenkins-master/builds?filter=trigger:build;branch:master;service:58eb8c8530fa280100c9fba7~jenkins-master)
 
+# CirclCI [![CircleCI build status] !https://circleci.com/gh/pmpavlov/jenkins-master.svg?style=svg!:https://circleci.com/gh/pmpavlov/jenkins-master
+
 # How to use this image
 
    docker run -p 8080:8080 -p 50000:50000 ppavlov/jenkins-master
