@@ -5,6 +5,7 @@ machine:
 dependencies:
   pre:
     - pip install awscli
+    - pip install awsebcli
   override:
     - docker info
     - docker build --rm=false -t ppavlov/jenkins-master .
@@ -20,6 +21,12 @@ deployment:
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push ppavlov/jenkins-master
+   
+  eb:
+    branch: master
+    commands:
+      - bash ./setup-eb.sh
+      - eb deploy --profile default
 
 #  elasticbeanstalk:
 #    branch: master
