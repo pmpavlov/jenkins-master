@@ -10,6 +10,12 @@ script:
   - docker run -d -p 8080:8080 -p 50000:50000 ppavlov/jenkins-master
   - docker ps -a
 
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push USER/REPO;
+    fi
+
 notifications:
-  email: false
+  email: true
 
