@@ -1,12 +1,15 @@
 sudo: required
 
+language: bash
+
 services:
   - docker
 
-before_install:
+script:
   - docker build --rm=false -t ppavlov/jenkins-master .
   - docker run -d -p 8080:8080 -p 50000:50000 ppavlov/jenkins-master
   - docker ps -a
 
-script:
-  - bundle exec rake test
+notifications:
+  email: false
+
