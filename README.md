@@ -2,6 +2,9 @@
 
 # CircleCI Status [![CircleCI](https://circleci.com/gh/pmpavlov/jenkins-master.svg?style=svg)](https://circleci.com/gh/pmpavlov/jenkins-master)
 
+# [![Travis Build Status](https://travis-ci.org/pmpavlov/jenkins-master.svg?branch=master)](https://travis-ci.org/pmpavlov/jenkins-master)
+
+
 # How to use this image
 
 
