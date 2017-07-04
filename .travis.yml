@@ -15,7 +15,7 @@ before_install:
   - pip install --user awscli
 
 before_script:
-  - docker build --rm=false -t ppavlov/jenkins-master .
+  - docker build --pull=true --rm=false -t ppavlov/jenkins-master .
   - docker run -d -p 8080:8080 -p 50000:50000 ppavlov/jenkins-master; sleep 10
 
 script:
