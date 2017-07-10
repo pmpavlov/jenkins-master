@@ -1,33 +1,22 @@
 dist: trusty
 sudo: required
-
 language: bash
-
 services:
-  - docker
-
+- docker
 env:
   global:
-    # include $HOME/.local/bin for `aws`
-    - PATH=$HOME/.local/bin:$PATH
-
+  - PATH=$HOME/.local/bin:$PATH
 before_install:
-  - pip install --user awscli
-
+- pip install --user awscli
 before_script:
-  - docker build --pull=true --rm=false -t ppavlov/jenkins-master .
-  - docker run -d -p 8080:8080 -p 50000:50000 ppavlov/jenkins-master; sleep 10
-
+- docker build --pull=true --rm=false -t ppavlov/jenkins-master .
+- docker run -d -p 8080:8080 -p 50000:50000 ppavlov/jenkins-master; sleep 10
 script:
-  - docker ps -a
-  - curl --retry 10 --retry-delay 5 -v http://localhost:8080/login 
-
+- docker ps -a
+- curl --retry 10 --retry-delay 5 -v http://localhost:8080/login
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push ppavlov/jenkins-master;
-    fi
-
+- if [ "$TRAVIS_BRANCH" == "master" ]; then docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+  docker push ppavlov/jenkins-master; fi
 notifications:
-  email: true
-
+  slack:
+    secure: 1WXqcGR80R7dgWqsvQEtlHeLbjC8zB1UNLv6lI/nxc8wSn6d2Wdd6En6lDrE5O1TXMF3gVO92TQXvLIZiZ5TQpbrmHOutArYF/7pE0cp2dWnUChh2nNd6R0v0TiFLbCxpjWYKvhRXxaN7xx/GHBgfbOOtUFOflWaOFvCnlXF4E6eRz24ivp8PIuc6orwr+waqU4vxJk3pzNeLzpowFJ26NnALjVv0iGVXQ5vwTuIKkgH3kPgGU/tGTRKQN/abDuqXQclMbGKBMI2PjkDnO6NLwT5nI/ihH0bufI4ywj6Jdx/GoekJLbt49g4icBayhAAble54ZwTldQm4r1j+nHQONJ/3iCB4z21eLk32L/ULcKbR1upiv98l9PHZEWuR1j2qSneRWo8x6r28ak5KLpFjmszxBMyt3DClgEZCKBEl3k2EVgNOjiGJ/A7oKORhEJOC/Hi44h+7tauiiJIPU0dKjE3FhxiIB9GycJlijWfZvNYT5xuf9LXN5jGXwkT8ANUi+/JnvNNjRY6STuYRf9dhnxbe1fBV2Lk6r62OZtiSYCvtisdf4HEhyKu8qgtRXO54o5skbnSvQO9fl0H3JI2dy5/hxFxFN1Di5IEjjrCCgafQ4PFgIRzlB15Qwopu9KJX7ZgRIWJMSU9FKNor1WCGIsWLTfo0FAnB429vs/QXL0=
