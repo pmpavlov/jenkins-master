@@ -1,0 +1,33 @@
+---
+engines:
+  fixme:
+    enabled: true
+    issue_override:
+      severity: info
+  csslint:
+    enabled: true
+  shellcheck:
+    enabled: true
+  git-legal:
+    enabled: true
+  markdownlint:
+    enabled: true
+    checks:
+      MD002: # "First header should be a h1 header"
+        enabled: false
+ratings:
+  paths:
+    - "Gemfile*"
+    - "*.gemspec"
+    - "package.json"
+    - "yarn.lock"
+    - "requirements.txt"
+    - "composer.*"
+    - "**.css"
+    - "**.sh"
+    - "**.md"
+exclude_paths:
+  - ".git/**"
+  - ".ebextensions/**"
+  - "node_modules/**"
+  - "test/**" 
