@@ -1,17 +1,11 @@
 # Build Status [![Codefresh build status]( https://g.codefresh.io/api/badges/build?repoOwner=pmpavlov&repoName=jenkins-master&branch=master&pipelineName=jenkins-master&accountName=ppavlov&type=cf-1)]( https://g.codefresh.io/repositories/pmpavlov/jenkins-master/builds?filter=trigger:build;branch:master;service:58eb8c8530fa280100c9fba7~jenkins-master)
-
 # CircleCI Status [![CircleCI](https://circleci.com/gh/pmpavlov/jenkins-master.svg?style=svg)](https://circleci.com/gh/pmpavlov/jenkins-master)
-
-# [![Travis Build Status](https://travis-ci.org/pmpavlov/jenkins-master.svg?branch=master)](https://travis-ci.org/pmpavlov/jenkins-master)
-
+# TravisCI Status [![Travis Build Status](https://travis-ci.org/pmpavlov/jenkins-master.svg?branch=master)](https://travis-ci.org/pmpavlov/jenkins-master)
+# Code Climate [![Code Climate](https://codeclimate.com/github/pmpavlov/jenkins-master/badges/gpa.svg)](https://codeclimate.com/github/pmpavlov/jenkins-master)
 
 # How to use this image
 
-
-
-
    docker run -p 8080:8080 -p 50000:50000 ppavlov/jenkins-master
-
 
 This will store the workspace in /var/jenkins_home. All Jenkins data lives in there - including plugins and configuration. You will probably want to make that a persistent volume (recommended):
 
