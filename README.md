@@ -1,5 +1,7 @@
-# TravisCI Status [![Travis Build Status](https://travis-ci.org/pmpavlov/jenkins-master.svg?branch=master)](https://travis-ci.org/pmpavlov/jenkins-master)
-# Code Climate [![Code Climate](https://codeclimate.com/github/pmpavlov/jenkins-master/badges/gpa.svg)](https://codeclimate.com/github/pmpavlov/jenkins-master)
+# TravisCI Status 
+[![Travis Build Status](https://travis-ci.org/pmpavlov/jenkins-master.svg?branch=master)](https://travis-ci.org/pmpavlov/jenkins-master)
+# Code Climate 
+[![Code Climate](https://codeclimate.com/github/pmpavlov/jenkins-master/badges/gpa.svg)](https://codeclimate.com/github/pmpavlov/jenkins-master)
 
 # How to use this image
 
