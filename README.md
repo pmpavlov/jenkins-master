@@ -1,6 +1,9 @@
 # TravisCI Status 
+
 [![Travis Build Status](https://travis-ci.org/pmpavlov/jenkins-master.svg?branch=master)](https://travis-ci.org/pmpavlov/jenkins-master)
+
 # Code Climate 
+
 [![Code Climate](https://codeclimate.com/github/pmpavlov/jenkins-master/badges/gpa.svg)](https://codeclimate.com/github/pmpavlov/jenkins-master)
 
 # How to use this image
@@ -40,6 +43,7 @@ For more info check Docker docs section on [`Managing data in
 containers`](https://docs.docker.com/engine/tutorials/dockervolumes/)
 
 # Setting the number of executors
+
 You can specify and set the number of executors of your Jenkins master instance
 using a groovy script. By default its set to 2 executors, but you can extend the
 image and change it to your desired number of executors :
@@ -54,11 +58,13 @@ FROM ppavlov/jenkins-master
 COPY executors.groovy /usr/share/jenkins/ref/init.groovy.d/executors.groovy
 
 # Attaching build executors
+
 You can run builds on the master (out of the box) but if you want to attach
 build slave servers: make sure you map the port: -p 50000:50000 - which will be
 used when you connect a slave agent.
 
 # Passing JVM parameters
+
 You might need to customize the JVM running Jenkins, typically to pass system
 properties or tweak heap memory settings. Use JAVA_OPTS environment variable for
 this purpose :
@@ -66,6 +72,7 @@ this purpose :
   docker run --name myjenkins -p 8080:8080 -p 50000:50000 --env JAVA_OPTS=-Dhudson.footerURL=http://mycompany.com ppavlov/jenkins-master
 
 # Configuring logging
+
 Jenkins logging can be configured through a properties file and
 java.util.logging.config.file Java property. For example:
 
@@ -105,7 +112,9 @@ build steps via jenkins tool installers, or you can create your own Dockerfile
 to customise, for example:
 
 FROM ppavlov/jenkins-master
+
 # if we want to install via apt
+
 USER root
 RUN apt-get update && apt-get install -y ruby make more-thing-here
 USER jenkins # drop back to the regular jenkins user - good practice
