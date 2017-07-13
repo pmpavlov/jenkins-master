@@ -1,10 +1,10 @@
-# TravisCI Status
+#TravisCI Status
 [![Travis Build Status](https://travis-ci.org/pmpavlov/jenkins-master.svg?branch=master)](https://travis-ci.org/pmpavlov/jenkins-master)
 
-# Code Climate
+#Code Climate
 [![Code Climate](https://codeclimate.com/github/pmpavlov/jenkins-master/badges/gpa.svg)](https://codeclimate.com/github/pmpavlov/jenkins-master)
 
-# How to use this image
+#How to use this image
 
    docker run -p 8080:8080 -p 50000:50000 ppavlov/jenkins-master
 
@@ -25,7 +25,7 @@ You can also use a volume container:
 Then myjenkins container has the volume (please do read about docker volume
 handling to find out more).
 
-# Backing up data
+#Backing up data
 
 If you bind mount in a volume - you can simply back up that directory (which is
 jenkins_home) at any time.
