@@ -144,3 +144,4 @@ And in derived Dockerfile just invoke the utility plugin.sh script
 FROM ppavlov/jenkins-master
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
+
